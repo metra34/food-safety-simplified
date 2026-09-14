@@ -34,6 +34,7 @@ function isTypingTarget(target: EventTarget | null) {
   )
 }
 
+/* TODO: remove this / make it a button toggle */
 function ThemeHotkey() {
   const { resolvedTheme, setTheme } = useTheme()
 
