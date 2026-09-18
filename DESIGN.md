@@ -1,3 +1,4 @@
+---
 name: Food Safety Simplified
 colors:
   surface: '#f9f9ff'
