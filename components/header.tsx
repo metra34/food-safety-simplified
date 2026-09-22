@@ -70,7 +70,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background">
-      <div className="mx-auto flex h-16 max-w-8xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto flex h-16 max-w-8xl items-center justify-between gap-4 pl-4 pr-6">
         <div className="flex shrink-0 items-center gap-3">
           <Link href="/">
             <Image
@@ -125,18 +125,9 @@ export function Header() {
             )}
           </button>
 
-          <div
-            className={cn(
-              "absolute inset-x-0 top-full grid bg-background transition-[grid-template-rows] duration-300 ease-in-out",
-              isMenuOpen
-                ? "grid-rows-[1fr] border-t border-border"
-                : "grid-rows-[0fr]"
-            )}
-            aria-hidden={!isMenuOpen}
-            inert={!isMenuOpen}
-          >
-            <nav className="overflow-hidden">
-              <div className="flex flex-col gap-4 px-4 py-4 sm:px-6">
+          {isMenuOpen && (
+            <div className="absolute inset-x-0 top-full border-t border-border bg-background">
+              <nav className="flex flex-col gap-4 px-4 py-4 sm:px-6">
                 <ul className="flex flex-col gap-4">
                   {navItems.map((item) => (
                     <li key={item.href}>
@@ -158,13 +149,13 @@ export function Header() {
                       onClick={() => setIsMenuOpen(false)}
                     />
                   }
-                  className="w-full"
+                  className="max-w-2xl"
                 >
                   Contact
                 </Button>
-              </div>
-            </nav>
-          </div>
+              </nav>
+            </div>
+          )}
         </div>
       </div>
     </header>
