@@ -22,6 +22,7 @@
   --slate-body: #2c3e50;
   --slate-muted: #5a6b7c;
   --border-subtle: #dce5f0;
+  --footer: #001d3a;
   --on-primary: #ffffff;
   --on-secondary: #ffffff;
   --on-surface: #001c3d;
@@ -64,10 +65,7 @@
   --sidebar-ring: var(--focus-ring);
 }
 
-.dark {
-  /* Dark brand palette — slate/blue-gray surfaces derived from the brand hue,
-     no pure black. Overriding these alone is enough: every semantic token
-     above is aliased to one of these and recomputes automatically. */
+/* .dark {
   --primary: #3d78bd;
   --primary-hover: #2f5f96;
   --badge-bg-green: #1b2a17;
@@ -85,7 +83,7 @@
   --on-surface: #eef2f8;
   --on-surface-variant: #aab8c8;
   --error: #e5484d;
-}
+} */
 
 @theme inline {
   --font-sans: var(--font-sans);
@@ -105,6 +103,7 @@
   --color-slate-body: var(--slate-body);
   --color-slate-muted: var(--slate-muted);
   --color-border-subtle: var(--border-subtle);
+  --color-footer: var(--footer);
   --color-on-primary: var(--on-primary);
   --color-on-secondary: var(--on-secondary);
   --color-on-surface: var(--on-surface);

@@ -4,7 +4,7 @@ import logo from "./assets/logo.png"
 
 export default function Page() {
   return (
-    <main className="flex min-h-svh flex-col items-center justify-center gap-8 px-6 py-12 text-center">
+    <div className="flex grow flex-col items-center justify-center px-6 text-center">
       <Image
         src={logo}
         alt="Food Safety Simplified"
@@ -14,6 +14,6 @@ export default function Page() {
       <h1 className="text-4xl font-extrabold tracking-tight text-primary sm:text-6xl">
         COMING SOON
       </h1>
-    </main>
+    </div>
   )
 }
