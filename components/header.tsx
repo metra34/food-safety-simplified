@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { RiCloseLine, RiMenuLine } from "@remixicon/react"
 
 import logo from "@/app/assets/logo-sm-fff.png"
 import { Button } from "@/components/ui/button"
+import { Icon } from "@/components/ui/icon"
 import { cn } from "@/lib/utils"
 
 const navItems = [
@@ -119,9 +119,9 @@ export function Header() {
             className="inline-flex size-9 items-center justify-center text-foreground"
           >
             {isMenuOpen ? (
-              <RiCloseLine className="size-6" aria-hidden="true" />
+              <Icon name="close" />
             ) : (
-              <RiMenuLine className="size-6" aria-hidden="true" />
+              <Icon name="menu" />
             )}
           </button>
 
