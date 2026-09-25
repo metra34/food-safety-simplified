@@ -1,10 +1,13 @@
 import type { Metadata } from "next"
 
+import { ModalityCard } from "@/components/cards/modality-card"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Icon } from "@/components/ui/icon"
 import { Separator } from "@/components/ui/separator"
+
+import { LegalSection } from "./components/legal-section"
+import { Limitation } from "./components/limitation"
 
 export const metadata: Metadata = {
   title: "Regulatory Disclaimer & Terms of Service | Food Safety Simplified",
@@ -12,91 +15,11 @@ export const metadata: Metadata = {
     "Advisory nature, limitations, and liability terms for Food Safety Simplified consulting services.",
 }
 
-function LegalSection({
-  id,
-  number,
-  title,
-  children,
-}: {
-  id: string
-  number: number
-  title: string
-  children: React.ReactNode
-}) {
-  return (
-    <section id={id} aria-labelledby={`${id}-title`} className="scroll-mt-20">
-      <div className="mb-4 flex items-start gap-3">
-        <span className="flex size-8 shrink-0 items-center justify-center bg-primary text-sm font-bold text-primary-foreground">
-          {number}
-        </span>
-        <h2
-          id={`${id}-title`}
-          className="pt-0.5 text-xl font-bold tracking-tight text-primary md:text-2xl"
-        >
-          {title}
-        </h2>
-      </div>
-      <div className="flex flex-col gap-4 text-base leading-relaxed text-foreground md:pl-11">
-        {children}
-      </div>
-    </section>
-  )
-}
-
-function Limitation({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <li className="flex items-start gap-3">
-      <Icon
-        name="block"
-        size={20}
-        className="mt-0.5 shrink-0 text-destructive"
-      />
-      <span>{children}</span>
-    </li>
-  )
-}
-
-function ModalityCard({
-  icon,
-  title,
-  accent,
-  children,
-}: {
-  icon: string
-  title: string
-  accent: "primary" | "leaf"
-  children: React.ReactNode
-}) {
-  return (
-    <div
-      className={
-        accent === "primary"
-          ? "flex flex-col gap-3 border border-t-4 border-border border-t-primary bg-surface-card p-5"
-          : "flex flex-col gap-3 border border-t-4 border-border border-t-leaf-deep bg-surface-card p-5"
-      }
-    >
-      <div className="flex items-center gap-2">
-        <Icon
-          name={icon}
-          size={22}
-          className={accent === "primary" ? "text-primary" : "text-leaf-deep"}
-        />
-        <h3 className="text-lg font-bold text-on-surface">{title}</h3>
-      </div>
-      <p className="text-sm leading-relaxed text-foreground">{children}</p>
-    </div>
-  )
-}
-
 export default function Page() {
   return (
     <>
       <section className="w-full">
-        <div className="mx-auto flex max-w-4xl flex-col items-center gap-4 px-4 py-10 text-center md:px-16 md:py-14 lg:px-6">
+        <div className="mx-auto flex max-w-4xl flex-col items-center gap-4 px-4 py-6 text-center md:px-16 lg:px-6 lg:py-10">
           <h1 className="text-3xl font-extrabold tracking-tight text-primary md:text-4xl">
             Regulatory Disclaimer &amp; Terms of Service
           </h1>
@@ -109,9 +32,9 @@ export default function Page() {
       </section>
 
       <section className="w-full bg-surface-container-low">
-        <div className="mx-auto max-w-4xl px-4 py-10 md:px-16 md:py-14 lg:px-6">
-          <Card className="rounded-none border border-border shadow-[4px_4px_0px_var(--primary)] ring-0 [--card-spacing:--spacing(6)] md:[--card-spacing:--spacing(10)]">
-            <CardContent className="flex flex-col gap-10">
+        <div className="mx-auto max-w-4xl px-4 py-6 md:px-16 lg:px-6 lg:py-10">
+          <Card className="rounded-none border border-border shadow-[4px_4px_0px_var(--primary)] ring-0 [--card-spacing:--spacing(6)] md:[--card-spacing:--spacing(8)]">
+            <CardContent className="flex flex-col gap-6">
               <LegalSection
                 id="advisory-nature"
                 number={1}

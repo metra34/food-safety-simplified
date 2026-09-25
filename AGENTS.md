@@ -19,7 +19,8 @@
 - **Pages contain only `Page()`:** A route's `page.tsx` defines only the default-exported `Page()` component (plus Next.js route exports such as `metadata`). Any other component used by the page must be extracted.
 - **Location:** Reusable components live in `components/{typeOfComponent}/{component-name}.tsx`, where the folder groups components by kind and the filename is the kebab-case component name.
   - Example: `ModalityCard` → `components/cards/modality-card.tsx`
-  - Other examples: `components/sections/legal-section.tsx`, `components/forms/contact-form.tsx`, `components/layout/header.tsx`
+  - Other examples: `components/forms/contact-form.tsx`, `components/layout/header.tsx`
+- **Route-specific components:** Components used by only one route live next to it in `app/{route}/components/{component-name}.tsx` (e.g. `app/legal/components/legal-section.tsx`). Move them to `components/{typeOfComponent}/` once a second route needs them.
 - **Naming:** Use PascalCase for the component and a named export matching it (e.g. `export function ModalityCard`). Pages keep `export default function Page()`.
 - **Exception — `components/ui/`:** This folder is reserved for shadcn registry components only, including ones we've modified (e.g. added brand variants to `Button`, `Badge`, `Alert`). They keep their upstream structure, including multiple related exports per file (e.g. `Card`, `CardContent`) — don't split them. Custom components never go in `components/ui/`, even if they're UI primitives; place them in a type folder instead (e.g. `components/icons/icon.tsx`).
 

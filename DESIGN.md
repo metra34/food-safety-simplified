@@ -127,7 +127,13 @@ Plus Jakarta Sans everywhere. Use Tailwind's default type scale with these patte
 
 ## Layout & Spacing
 
-- **Spacing:** Tailwind's default 4px scale (`--spacing: 0.25rem`). Stick to even steps: `2` (8px) for dense lists, `4` (16px) default, `6` (24px) card padding, `10` (40px) section spacing.
+- **Spacing:** Tailwind's default 4px scale (`--spacing: 0.25rem`). Stick to even steps: `2` (8px) for dense lists, `4` (16px) default, `6` (24px) card padding and gaps between content blocks.
+- **Vertical rhythm — keep it compact.** Pages should feel dense and efficient, not airy. Match the home page:
+  - **Page section bands** (full-width `<section>` wrappers): `py-6 lg:py-10` (24px → 40px). Never exceed `py-10`.
+  - **Stacked blocks inside a section or card** (e.g. numbered legal sections, card groups): `gap-6` (24px), with a `Separator` between them when they're distinct topics.
+  - **Heading to its content:** `mb-3` / `gap-3` (12px). **Paragraph to paragraph:** `gap-4` (16px).
+  - **Hero stacks** (badge → title → lead → actions): `gap-4` to `gap-5`.
+  - **Card padding:** `--card-spacing: --spacing(6)` on mobile, up to `--spacing(8)` from `md`/`lg`.
 - **Container:** content is centered with `mx-auto max-w-7xl` (1280px). Header, footer, and page sections all use the same max width so edges align.
 - **Page gutters:** `px-4` on mobile. Header, footer, and page sections should share the same horizontal padding at each breakpoint.
 - **Grid:** 12 columns from `lg` (`lg:grid-cols-12`), single column below. Column gap `gap-6` to `gap-12`.
@@ -193,6 +199,17 @@ Badges are uppercase labels; pair with a Material Symbol such as `verified` via 
 - **Standard card:** `bg-card border border-border`, 24px padding (`--card-spacing: --spacing(6)`).
 - **Featured card:** add the hard offset shadow.
 - **Compliance card:** add a `border-t-4 border-leaf-deep` top edge.
+
+### Alert (`components/ui/alert.tsx`)
+
+| Variant | Look |
+|---|---|
+| `primary` | `badge-bg-blue` fill, 4px `primary` left edge, primary title/icon — key notes and callouts |
+| `leaf` | `badge-bg-green` fill, 4px `leaf-deep` left edge, green title/icon — positive/responsibility callouts |
+| `default`, `destructive` | shadcn defaults |
+
+- Put an `<Icon>` as the first child; it is vertically centered against the title + description.
+- Use `role="note"` for static callouts so screen readers don't announce them as live alerts.
 
 ### Form inputs (`input`, `textarea`, `select`, `radio-group`, `field`)
 

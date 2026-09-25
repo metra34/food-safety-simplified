@@ -1,9 +1,9 @@
 import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google"
 
 import "./globals.css"
-import { Footer } from "@/components/footer"
-import { Header } from "@/components/header"
-import { ThemeProvider } from "@/components/theme-provider"
+import { Footer } from "@/components/layout/footer"
+import { Header } from "@/components/layout/header"
+import { ThemeProvider } from "@/components/layout/theme-provider"
 import { cn } from "@/lib/utils"
 
 const plusJakartaSans = Plus_Jakarta_Sans({
