@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-import logo from "@/app/assets/logo-sm-fff.png"
+import logo from "@/app/assets/logo-sm-nobg.png"
 import { Button } from "@/components/ui/button"
 import { Icon } from "@/components/ui/icon"
 import { cn } from "@/lib/utils"
@@ -80,10 +80,10 @@ export function Header() {
             />
           </Link>
           <Link href="/" className="flex min-w-0 flex-col">
-            <span className="truncate text-base leading-none font-extrabold sm:text-lg lg:text-xl tracking-tight text-primary">
+            <span className="text-base leading-none font-extrabold sm:text-lg lg:text-xl tracking-tight text-primary">
               Food Safety Simplified
             </span>
-            <span className="mt-1 truncate text-xs font-bold tracking-wide text-leaf-accent uppercase">
+            <span className="mt-1 text-xs font-bold tracking-wide text-leaf-accent uppercase">
               Compliance &amp; Quality Advisory
             </span>
           </Link>

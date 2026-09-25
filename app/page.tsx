@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import logo from "./assets/logo.png"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Icon } from "@/components/ui/icon"
@@ -22,16 +23,22 @@ const metrics = [
 export default function Page() {
   return (
     <section className="w-full bg-surface-container-low">
-      <div className="mx-auto grid max-w-7xl gap-12 bg-surface-container-low px-4 py-8 md:px-16 md:py-16 lg:grid-cols-12 lg:px-6 lg:py-20">
-        <div className="flex flex-col items-center justify-center gap-6 text-center lg:col-span-7 lg:items-start lg:text-left">
+      <div className="mx-auto grid max-w-7xl gap-12 bg-surface-container-low px-4 py-6 md:px-16 md:py-12 lg:grid-cols-12 lg:px-6 lg:py-10">
+        <div className="flex flex-col items-center gap-5 text-center lg:col-span-7 lg:items-start lg:text-left">
+          <Badge
+            variant="primary"
+            className="h-auto gap-2 px-3 py-1.5 whitespace-normal has-data-[icon=inline-start]:pl-2.5"
+          >
+            <Icon name="verified" data-icon="inline-start" size={18} />
+            SPECIALIZED TECHNICAL CONSULTING & AUDIT READINESS
+          </Badge>
           <p className="max-w-2xl text-2xl font-bold text-leaf-accent md:text-3xl lg:text-4xl">
-            Food safety doesn&apos;t have to be complicated to be effective.
+            Food safety doesn&apos;t have to be complicated.
           </p>
           <p className="max-w-2xl text-lg text-slate-body">
-            Food safety standards, regulations, certification requirements, and
-            technical documentation can be complex. My role is to make them
-            clear, practical, and achievable for the people responsible for food
-            safety every day.
+            Food safety standards, regulations, and certification requirements
+            can feel overwhelming. Our role is to make them clear, practical,
+            and achievable for the people responsible for food safety every day.
           </p>
           <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
             <Button
@@ -40,7 +47,7 @@ export default function Page() {
               nativeButton={false}
               render={<Link href="/contact" />}
             >
-              <Icon name="mail" data-icon="inline-start" />
+              <Icon name="mail" data-icon="inline-start" size={18} />
               Get in Touch
             </Button>
             <Button
@@ -66,7 +73,7 @@ export default function Page() {
               </div>
             </CardContent>
             <CardContent>
-              <div className="grid grid-cols-2 gap-4 border-t border-border pt-4">
+              <div className="grid grid-cols-2 gap-4 justify-items-center border-t border-border pt-4">
                 {metrics.map((metric) => (
                   <div key={metric.label} className="space-y-1">
                     <span className="text-base font-bold text-muted-foreground uppercase">
