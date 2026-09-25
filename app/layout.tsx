@@ -1,6 +1,5 @@
 import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google"
 
-import "material-symbols/outlined.css"
 import "./globals.css"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"

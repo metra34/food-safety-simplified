@@ -37,7 +37,7 @@ function NavLink({
       onClick={onClick}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "text-sm font-semibold underline-offset-4 transition-colors",
+        "text-base font-bold underline-offset-4 transition-colors",
         isActive
           ? "text-primary underline"
           : "text-muted-foreground hover:text-foreground"
@@ -70,7 +70,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background">
-      <div className="mx-auto flex h-16 max-w-8xl items-center justify-between gap-4 pl-4 pr-6">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 pl-4 pr-6">
         <div className="flex shrink-0 items-center gap-3">
           <Link href="/">
             <Image
@@ -83,7 +83,7 @@ export function Header() {
             <span className="text-xl leading-none font-extrabold tracking-tight text-primary">
               Food Safety Simplified
             </span>
-            <span className="mt-1 text-[11px] font-bold tracking-wider text-leaf-deep uppercase">
+            <span className="mt-1 text-base font-bold tracking-wider text-leaf-accent uppercase">
               Compliance &amp; Quality Advisory
             </span>
           </Link>

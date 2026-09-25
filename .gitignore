@@ -36,4 +36,5 @@ pnpm-debug.log*
 next-env.d.ts
 
 # temporary
-test.html
+test1.html
+test2.html
