@@ -6,7 +6,7 @@ import { Controller, useForm } from "react-hook-form"
 import * as z from "zod"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import {
   Field,
   FieldError,
@@ -80,9 +80,11 @@ function FieldTag({ required }: { required?: boolean }) {
 }
 
 export function ContactForm({
+  title,
   onSubmit,
   className,
 }: {
+  title?: React.ReactNode
   onSubmit?: (values: ContactFormValues) => Promise<void> | void
   className?: string
 }) {
@@ -110,10 +112,11 @@ export function ContactForm({
   return (
     <Card
       className={cn(
-        "w-full rounded-none border border-border ring-0 shadow-none [--card-spacing:--spacing(6)] lg:[--card-spacing:--spacing(8)]",
+        "w-full rounded-none border border-t-4 border-border border-t-primary ring-0 shadow-none [--card-spacing:--spacing(6)] lg:[--card-spacing:--spacing(8)]",
         className
       )}
     >
+      {title && <CardHeader>{title}</CardHeader>}
       <CardContent>
         <form
           noValidate
@@ -302,6 +305,7 @@ export function ContactForm({
               <Button
                 type="submit"
                 size="lg"
+                variant="leaf"
                 disabled={form.formState.isSubmitting}
                 className="w-full font-bold tracking-[0.08em] uppercase sm:w-auto"
               >
