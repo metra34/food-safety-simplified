@@ -10,8 +10,12 @@ function ThemeProvider({
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="system"
-      enableSystem
+      // Dark mode isn't supported yet: the .dark tokens in globals.css are
+      // commented out. Remove forcedTheme and restore defaultTheme="system" +
+      // enableSystem to turn it back on.
+      defaultTheme="light"
+      forcedTheme="light"
+      enableSystem={false}
       disableTransitionOnChange
       {...props}
     >
