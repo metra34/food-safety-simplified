@@ -81,7 +81,7 @@ export function Header() {
           </Link>
           <Link href="/" className="flex min-w-0 flex-col">
             <span className="text-base leading-none font-extrabold sm:text-lg lg:text-xl tracking-tight text-primary">
-              Food Safety Simplified
+              Food Safety <i>Simplified</i>
             </span>
             <span className="mt-1 text-xs font-bold tracking-wide text-leaf-accent uppercase">
               Compliance &amp; Quality Advisory

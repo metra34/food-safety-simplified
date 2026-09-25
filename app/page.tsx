@@ -16,7 +16,7 @@ const metrics = [
   {
     label: "Application",
     value: "Floor-Validated",
-    className: "text-leaf-accent",
+    className: "text-leaf-deep",
   },
 ]
 
@@ -32,8 +32,8 @@ export default function Page() {
             <Icon name="verified" data-icon="inline-start" size={18} />
             SPECIALIZED TECHNICAL CONSULTING & AUDIT READINESS
           </Badge>
-          <p className="max-w-2xl text-2xl font-bold text-leaf-accent md:text-3xl lg:text-4xl">
-            Food safety doesn&apos;t have to be complicated.
+          <p className="max-w-2xl text-2xl font-bold text-leaf-deep md:text-3xl lg:text-4xl">
+            Food safety doesn&apos;t have to be <i>complicated.</i>
           </p>
           <p className="max-w-2xl text-lg text-slate-body">
             Food safety standards, regulations, and certification requirements

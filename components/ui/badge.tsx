@@ -20,10 +20,10 @@ const badgeVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         primary:
           "border-primary bg-primary text-primary-foreground [a]:hover:bg-primary-hover",
-        "primary-outline":
+        "outline-primary":
           "border-primary bg-surface-card text-primary [a]:hover:bg-primary [a]:hover:text-primary-foreground",
         leaf: "border-leaf-accent bg-leaf-accent text-on-secondary [a]:hover:bg-leaf-deep",
-        "leaf-outline":
+        "outline-leaf":
           "border-leaf-accent bg-surface-card text-leaf-deep [a]:hover:bg-leaf-accent [a]:hover:text-on-secondary",
       },
     },
