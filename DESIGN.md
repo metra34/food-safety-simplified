@@ -163,7 +163,7 @@ Zero radius on everything: buttons, cards, inputs, badges, menus, avatars, toggl
 No soft, blurred, or ambient shadows. Hierarchy comes from surface contrast, borders, and hard offsets.
 
 - **Layering:** tinted section (`bg-surface-container-low`) → white card (`bg-surface-card`) with a `border border-border` hairline.
-- **Hard offset shadow:** zero blur, primary colored — `shadow-[4px_4px_0px_var(--primary)]` for featured cards and elevated panels. Use a smaller `3px` offset for menus and popovers.
+- **Hard offset shadow:** zero blur, primary colored — `shadow-[4px_4px_0px_var(--primary)]` for featured cards and elevated panels. For cards, use `CardBorderedCorner` instead of repeating the class. Use a smaller `3px` offset for menus and popovers.
 - **Accent edge:** high-priority cards may use a 3–4px top or left border: `border-primary` for procedural content, `border-leaf-deep` for verified/compliant status (or `border-leaf-accent` when purely decorative).
 - Remove shadcn's default `shadow-sm` / `ring-1` on cards when they conflict with this rule.
 
@@ -197,7 +197,7 @@ Badges are uppercase labels; pair with a Material Symbol such as `verified` via 
 ### Card (`components/ui/card.tsx`)
 
 - **Standard card:** `bg-card border border-border`, 24px padding (`--card-spacing: --spacing(6)`).
-- **Featured card:** add the hard offset shadow.
+- **Featured card:** use `CardBorderedCorner` (`components/cards/card-bordered-corner.tsx`). It wraps `Card` with a hairline border, zero radius, no soft shadow/ring, and the primary hard offset shadow on the right and bottom edges. Pass `hoverable` for clickable/interactive cards: the offset shadow then appears only on hover.
 - **Compliance card:** add a `border-t-4 border-leaf-deep` top edge.
 
 ### Alert (`components/ui/alert.tsx`)

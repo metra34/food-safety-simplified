@@ -1,8 +1,9 @@
 import type { Metadata } from "next"
 
+import { CardBorderedCorner } from "@/components/cards/card-bordered-corner"
 import { ModalityCard } from "@/components/cards/modality-card"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { Card, CardContent } from "@/components/ui/card"
+import { CardContent } from "@/components/ui/card"
 import { Icon } from "@/components/ui/icon"
 import { Separator } from "@/components/ui/separator"
 
@@ -33,7 +34,7 @@ export default function Page() {
 
       <section className="w-full bg-surface-container-low">
         <div className="mx-auto max-w-4xl px-4 py-6 md:px-16 lg:px-6 lg:py-10">
-          <Card className="rounded-none border border-border shadow-[4px_4px_0px_var(--primary)] ring-0 [--card-spacing:--spacing(6)] md:[--card-spacing:--spacing(8)]">
+          <CardBorderedCorner className="[--card-spacing:--spacing(6)] md:[--card-spacing:--spacing(8)]">
             <CardContent className="flex flex-col gap-6">
               <LegalSection
                 id="advisory-nature"
@@ -202,7 +203,7 @@ export default function Page() {
                 </Alert>
               </LegalSection>
             </CardContent>
-          </Card>
+          </CardBorderedCorner>
         </div>
       </section>
     </>
