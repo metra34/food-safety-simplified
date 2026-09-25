@@ -7,6 +7,7 @@ colors:
   on-primary: '#ffffff'
   leaf-accent: '#5fa820'
   leaf-deep: '#498516'
+  secondary-hover: '#356010'
   on-secondary: '#ffffff'
   badge-bg-blue: '#e6effa'
   badge-bg-green: '#edf7e6'
@@ -51,7 +52,7 @@ The UI expresses authoritative regulatory expertise with fresh, practical clarit
 
 - **Precision modernism:** zero-radius, rectilinear geometry. Straight 90° edges convey audit-grade certainty.
 - **Clinical light mode:** cool whites and slates, maximum legibility. The site is **light mode only** (the `.dark` block in `globals.css` is intentionally disabled; don't add `dark:` styles to new code).
-- **Dual anchor:** deep brand blue for structure and authority; leaf green for verification, pass states, and positive accents.
+- **Dual anchor:** deep brand blue for structure and authority; deep leaf green (`leaf-deep`) as the secondary color for verification and pass states, with brighter `leaf-accent` reserved for decorative accents.
 
 ## Stack
 
@@ -71,9 +72,10 @@ Always use the Tailwind class, never a raw hex value.
 | Primary | `bg-primary` / `text-primary` / `border-primary` | `#003e7c` | Headings, nav, brand chrome, primary buttons, structural frames |
 | Primary hover | `bg-primary-hover` | `#002b59` | Hover state for primary fills |
 | On primary | `text-primary-foreground` (`text-on-primary`) | `#ffffff` | Text/icons on primary fills |
-| Leaf accent | `bg-leaf-accent` / `border-leaf-accent` (`bg-secondary`) | `#5fa820` | Pass stamps, verified marks, positive fills and borders |
-| Leaf deep | `text-leaf-deep` / `bg-leaf-deep` | `#498516` | **Green text on light backgrounds**; hover for leaf fills |
-| On leaf | `text-on-secondary` (`text-secondary-foreground`) | `#ffffff` | Text/icons on leaf fills |
+| Secondary (leaf deep) | `bg-leaf-deep` / `text-leaf-deep` / `border-leaf-deep` (`bg-secondary`) | `#498516` | Main green: all `leaf` component variants, green text, pass/verified fills and borders |
+| Secondary hover | `bg-secondary-hover` | `#356010` | Hover state for `leaf-deep` fills |
+| On secondary | `text-on-secondary` (`text-secondary-foreground`) | `#ffffff` | Text/icons on `leaf-deep` fills |
+| Leaf accent | `bg-leaf-accent` / `border-leaf-accent` | `#5fa820` | Decorative accents only: underlines, accent edges, dots, chart series. Never for text or text-bearing fills |
 
 ### Surfaces
 
@@ -100,9 +102,8 @@ Always use the Tailwind class, never a raw hex value.
 
 ### Contrast rules
 
-- `leaf-accent` (`#5fa820`) is only **~2.9:1** against white — it fails WCAG AA for text of any size.
-  - Green **text** on light backgrounds uses `text-leaf-deep` (~4.5:1).
-  - White text on a `leaf-accent` fill also falls just short of the 3:1 large-text minimum. Keep it to short, bold, redundant labels (e.g. a badge next to a `verified` icon); use `bg-leaf-deep` when the text carries meaning on its own.
+- `leaf-deep` (`#498516`) is ~4.5:1 against white, so green text and white-on-green fills pass WCAG AA. This is why it is the secondary color.
+- `leaf-accent` (`#5fa820`) is only ~2.9:1 against white and fails AA for text of any size. Use it only where no text depends on it.
 - Primary on white and white on primary pass AA at all sizes.
 
 ## Typography
@@ -157,7 +158,7 @@ No soft, blurred, or ambient shadows. Hierarchy comes from surface contrast, bor
 
 - **Layering:** tinted section (`bg-surface-container-low`) → white card (`bg-surface-card`) with a `border border-border` hairline.
 - **Hard offset shadow:** zero blur, primary colored — `shadow-[4px_4px_0px_var(--primary)]` for featured cards and elevated panels. Use a smaller `3px` offset for menus and popovers.
-- **Accent edge:** high-priority cards may use a 3–4px top or left border: `border-primary` for procedural content, `border-leaf-accent` for verified/compliant status.
+- **Accent edge:** high-priority cards may use a 3–4px top or left border: `border-primary` for procedural content, `border-leaf-deep` for verified/compliant status (or `border-leaf-accent` when purely decorative).
 - Remove shadcn's default `shadow-sm` / `ring-1` on cards when they conflict with this rule.
 
 ## Components
@@ -169,9 +170,9 @@ Variant names below are the actual `variant` prop values.
 | Variant | Look |
 |---|---|
 | `default` | Primary fill, white text |
-| `leaf` | Leaf fill, white text |
+| `leaf` | `leaf-deep` fill, white text |
 | `outline-primary` | White/background fill, 2px primary border, primary text; fills primary on hover |
-| `outline-leaf` | 2px leaf border, `leaf-deep` text; fills leaf on hover |
+| `outline-leaf` | 2px `leaf-deep` border and text; fills `leaf-deep` on hover |
 | `outline`, `secondary`, `ghost`, `destructive`, `link` | shadcn defaults, mapped to brand tokens |
 
 Sizes: `xs` (28px), `sm` (32px), `default` (40px), `lg` (44px), plus square `icon-*` sizes. Use `lg` for hero calls to action. For links, use `nativeButton={false} render={<Link href="…" />}`.
@@ -182,8 +183,8 @@ Sizes: `xs` (28px), `sm` (32px), `default` (40px), `lg` (44px), plus square `ico
 |---|---|
 | `primary` / `default` | Primary fill, white text — authority tag |
 | `outline-primary` | White fill, primary border and text |
-| `leaf` | Leaf fill, white text — pass/verified |
-| `outline-leaf` | White fill, leaf border, `leaf-deep` text — compliance badge |
+| `leaf` | `leaf-deep` fill, white text — pass/verified |
+| `outline-leaf` | White fill, `leaf-deep` border and text — compliance badge |
 
 Badges are uppercase labels; pair with a Material Symbol such as `verified` via `data-icon="inline-start"`. Long badge text on mobile needs `h-auto whitespace-normal`.
 
@@ -191,7 +192,7 @@ Badges are uppercase labels; pair with a Material Symbol such as `verified` via 
 
 - **Standard card:** `bg-card border border-border`, 24px padding (`--card-spacing: --spacing(6)`).
 - **Featured card:** add the hard offset shadow.
-- **Compliance card:** add a `border-t-4 border-leaf-accent` top edge.
+- **Compliance card:** add a `border-t-4 border-leaf-deep` top edge.
 
 ### Form inputs (`input`, `textarea`, `select`, `radio-group`, `field`)
 
@@ -202,16 +203,13 @@ Badges are uppercase labels; pair with a Material Symbol such as `verified` via 
 
 ### Header & footer
 
-- Header: sticky, `bg-background`, bottom hairline border, 64px tall (`h-16`). Brand = logo + "Food Safety Simplified" + uppercase `leaf-accent` tagline.
+- Header: sticky, `bg-background`, bottom hairline border, 64px tall (`h-16`). Brand = logo + "Food Safety Simplified" + uppercase `leaf-deep` tagline.
 - Footer: `bg-footer`, `text-xs text-white/60`, links hover to white.
 
 ## Known deviations (to fix in code)
 
 These are places where the code does not yet follow this document:
 
-- **Hero headline** (`app/page.tsx`) uses `text-leaf-accent` on a light background; it should use `text-leaf-deep` per the contrast rules.
-- **`leaf` button** puts white text on `leaf-accent`, which is below the contrast minimum for a meaningful label; consider `bg-leaf-deep` as its base fill.
-- **Button hovers** use opacity (`hover:bg-primary/80`, `hover:bg-leaf-accent/80`) instead of `bg-primary-hover` / `bg-leaf-deep`.
 - **Badge** base style is `font-medium` without uppercase tracking; label styling is currently applied per use.
 - **Card** base keeps shadcn's `shadow-sm` and `ring-1 ring-foreground/5` soft effects.
 - **Button focus** uses `ring-3 ring-ring/30` instead of the 2px solid `outline-ring` used by inputs.

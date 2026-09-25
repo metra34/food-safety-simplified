@@ -11,6 +11,7 @@
   --primary-hover: #002b59;
   --leaf-accent: #5fa820;
   --leaf-deep: #498516;
+  --secondary-hover: #356010;
   --badge-bg-green: #edf7e6;
   --badge-bg-blue: #e6effa;
   --surface: #f9f9ff;
@@ -40,7 +41,7 @@
   --popover: var(--surface-card);
   --popover-foreground: var(--slate-body);
   --primary-foreground: var(--on-primary);
-  --secondary: var(--leaf-accent);
+  --secondary: var(--leaf-deep);
   --secondary-foreground: var(--on-secondary);
   --muted: var(--surface-container-low);
   --muted-foreground: var(--slate-muted);
@@ -93,6 +94,7 @@
   --color-primary-hover: var(--primary-hover);
   --color-leaf-accent: var(--leaf-accent);
   --color-leaf-deep: var(--leaf-deep);
+  --color-secondary-hover: var(--secondary-hover);
   --color-badge-bg-green: var(--badge-bg-green);
   --color-badge-bg-blue: var(--badge-bg-blue);
   --color-surface: var(--surface);

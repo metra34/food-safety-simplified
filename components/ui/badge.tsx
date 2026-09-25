@@ -19,12 +19,12 @@ const badgeVariants = cva(
           "hover:bg-muted hover:text-muted-foreground dark:hover:bg-muted/50",
         link: "text-primary underline-offset-4 hover:underline",
         primary:
-          "border-primary bg-primary text-primary-foreground [a]:hover:bg-primary-hover",
+          "border-primary bg-primary text-primary-foreground [a]:hover:border-primary-hover [a]:hover:bg-primary-hover",
         "outline-primary":
           "border-primary bg-surface-card text-primary [a]:hover:bg-primary [a]:hover:text-primary-foreground",
-        leaf: "border-leaf-accent bg-leaf-accent text-on-secondary [a]:hover:bg-leaf-deep",
+        leaf: "border-leaf-deep bg-leaf-deep text-on-secondary [a]:hover:border-secondary-hover [a]:hover:bg-secondary-hover",
         "outline-leaf":
-          "border-leaf-accent bg-surface-card text-leaf-deep [a]:hover:bg-leaf-accent [a]:hover:text-on-secondary",
+          "border-leaf-deep bg-surface-card text-leaf-deep [a]:hover:bg-leaf-deep [a]:hover:text-on-secondary",
       },
     },
     defaultVariants: {

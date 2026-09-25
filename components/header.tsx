@@ -83,7 +83,7 @@ export function Header() {
             <span className="text-base leading-none font-extrabold sm:text-lg lg:text-xl tracking-tight text-primary">
               Food Safety <i>Simplified</i>
             </span>
-            <span className="mt-1 text-xs font-bold tracking-wide text-leaf-accent uppercase">
+            <span className="mt-1 text-xs font-bold tracking-wide text-leaf-deep uppercase">
               Compliance &amp; Quality Advisory
             </span>
           </Link>
@@ -126,7 +126,7 @@ export function Header() {
           </button>
 
           {isMenuOpen && (
-            <div className="absolute top-full right-0 w-[350px] max-w-full border border-border bg-background">
+            <div className="absolute top-full right-0 w-87.5 max-w-full border border-border bg-background">
               <nav className="flex flex-col gap-4 px-4 py-4 sm:px-6">
                 <ul className="flex flex-col gap-4">
                   {navItems.map((item) => (

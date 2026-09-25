@@ -29,14 +29,14 @@ export default function Page() {
             variant="primary"
             className="h-auto gap-2 px-3 py-1.5 whitespace-normal has-data-[icon=inline-start]:pl-2.5"
           >
-            <Icon name="verified" data-icon="inline-start" size={18} />
+            <Icon name="verified_user" data-icon="inline-start" size={18} />
             SPECIALIZED TECHNICAL CONSULTING & AUDIT READINESS
           </Badge>
           <p className="max-w-2xl text-2xl font-bold text-leaf-deep md:text-3xl lg:text-4xl">
             Food safety doesn&apos;t have to be <i>complicated.</i>
           </p>
           <p className="max-w-2xl text-lg text-slate-body">
-            Food safety standards, regulations, and certification requirements
+            Compliance standards, regulations, and certification requirements
             can feel overwhelming. Our role is to make them clear, practical,
             and achievable for the people responsible for food safety every day.
           </p>

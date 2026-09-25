@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export function Footer() {
   return (
     <footer className="bg-footer">
@@ -11,13 +13,13 @@ export function Footer() {
               Privacy Policy
             </a>
             <span>•</span>
-            <a href="#" className="transition-colors hover:text-white">
+            <Link href="/legal" className="transition-colors hover:text-white">
               Terms of Service
-            </a>
+            </Link>
             <span>•</span>
-            <a href="#" className="transition-colors hover:text-white">
+            <Link href="/legal" className="transition-colors hover:text-white">
               Regulatory Disclaimer
-            </a>
+            </Link>
           </div>
         </div>
       </div>

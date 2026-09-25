@@ -7,12 +7,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/80",
-        leaf: "bg-leaf-accent text-on-secondary hover:bg-leaf-accent/80",
+        default: "bg-primary text-primary-foreground hover:bg-primary-hover",
+        leaf: "bg-leaf-deep text-on-secondary hover:bg-secondary-hover",
         "outline-primary":
           "border-2 border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground aria-expanded:bg-primary aria-expanded:text-primary-foreground",
         "outline-leaf":
-          "border-2 border-leaf-accent bg-background text-leaf-deep hover:bg-leaf-accent hover:text-on-secondary aria-expanded:bg-leaf-accent aria-expanded:text-on-secondary",
+          "border-2 border-leaf-deep bg-background text-leaf-deep hover:bg-leaf-deep hover:text-on-secondary aria-expanded:bg-leaf-deep aria-expanded:text-on-secondary",
         outline:
           "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:bg-transparent dark:hover:bg-input/30",
         secondary:
