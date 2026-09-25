@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils"
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
+  { label: "About Me", href: "/about" },
 ]
 
 function isRouteActive(pathname: string, href: string) {
@@ -37,7 +37,7 @@ function NavLink({
       onClick={onClick}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "text-base font-bold underline-offset-4 transition-colors",
+        "text-base font-bold whitespace-nowrap underline-offset-4 transition-colors",
         isActive
           ? "text-primary underline"
           : "text-muted-foreground hover:text-foreground"
@@ -71,26 +71,26 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 pl-4 pr-6">
-        <div className="flex shrink-0 items-center gap-3">
-          <Link href="/">
+        <div className="flex min-w-0 items-center gap-3">
+          <Link href="/" className="shrink-0">
             <Image
               src={logo}
               alt="Food Safety Simplified"
               className="h-10 w-auto object-contain"
             />
           </Link>
-          <Link href="/" className="flex flex-col">
-            <span className="text-xl leading-none font-extrabold tracking-tight text-primary">
+          <Link href="/" className="flex min-w-0 flex-col">
+            <span className="truncate text-base leading-none font-extrabold sm:text-lg lg:text-xl tracking-tight text-primary">
               Food Safety Simplified
             </span>
-            <span className="mt-1 text-base font-bold tracking-wider text-leaf-accent uppercase">
+            <span className="mt-1 truncate text-xs font-bold tracking-wide text-leaf-accent uppercase">
               Compliance &amp; Quality Advisory
             </span>
           </Link>
         </div>
 
         <nav className="hidden md:flex md:flex-1 md:items-center md:justify-center">
-          <ul className="flex items-center gap-8 mr-16">
+          <ul className="flex items-center gap-6 lg:mr-16 lg:gap-8">
             {navItems.map((item) => (
               <li key={item.href}>
                 <NavLink
@@ -110,7 +110,7 @@ export function Header() {
           </Button>
         </div>
 
-        <div ref={menuRef} className="md:hidden">
+        <div ref={menuRef} className="shrink-0 md:hidden">
           <button
             type="button"
             onClick={() => setIsMenuOpen((open) => !open)}
@@ -126,7 +126,7 @@ export function Header() {
           </button>
 
           {isMenuOpen && (
-            <div className="absolute inset-x-0 top-full border-t border-border bg-background">
+            <div className="absolute top-full right-0 w-[350px] max-w-full border border-border bg-background">
               <nav className="flex flex-col gap-4 px-4 py-4 sm:px-6">
                 <ul className="flex flex-col gap-4">
                   {navItems.map((item) => (
