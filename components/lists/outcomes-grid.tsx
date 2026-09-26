@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 const outcomes = [
   {
     icon: "account_tree",
-    title: "Straightforward and effective systems",
+    title: "Practical and effective safety systems",
     description:
       "Systems that are simple to follow, easy to maintain, and built to work in real production environments.",
   },
@@ -32,7 +32,7 @@ const outcomes = [
     icon: "build",
     title: "Sustainable corrective actions",
     description:
-      "Issues are fixed in a practical, long‑term way so the same problems do not keep returning.",
+      "Issues are fixed in an effective, long‑term way so the same problems do not keep returning.",
   },
   {
     icon: "trending_up",

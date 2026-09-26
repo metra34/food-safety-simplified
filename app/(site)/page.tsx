@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import logo from "@/app/assets/logo.png"
+import logo from "@/app/assets/logo-nobg.png"
 import { CardBorderedCorner } from "@/components/cards/card-bordered-corner"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
