@@ -197,7 +197,7 @@ Badges are uppercase labels; pair with a Material Symbol such as `verified` via 
 ### Card (`components/ui/card.tsx`)
 
 - **Standard card:** `bg-card border border-border`, 24px padding (`--card-spacing: --spacing(6)`).
-- **Featured card:** use `CardBorderedCorner` (`components/cards/card-bordered-corner.tsx`). It wraps `Card` with a hairline border, zero radius, no soft shadow/ring, and the primary hard offset shadow on the right and bottom edges. Pass `hoverable` for clickable/interactive cards: the offset shadow then appears only on hover.
+- **Featured card:** use `CardBorderedCorner` (`components/cards/card-bordered-corner.tsx`). It wraps `Card` with a hairline border, zero radius, no soft shadow/ring, and the primary hard offset shadow on the right and bottom edges. `variant="primary"` (default) uses a `primary` shadow; `variant="secondary"` uses `leaf-deep`. Pass `hoverable` for clickable/interactive cards: the shadow then appears only on hover, in the variant's hover color (`primary-hover` / `secondary-hover`). Inside a hoverable card, tint accents with `group-hover/card:text-primary-hover` or `group-hover/card:text-secondary-hover` to match.
 - **Compliance card:** add a `border-t-4 border-leaf-deep` top edge.
 
 ### Alert (`components/ui/alert.tsx`)

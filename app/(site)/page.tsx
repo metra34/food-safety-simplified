@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button"
 import { CardContent } from "@/components/ui/card"
 import { Icon } from "@/components/ui/icon"
 
+import { OutcomesGrid } from "@/components/lists/outcomes-grid"
+
 const metrics = [
   {
     label: "Documentation",
@@ -28,7 +30,7 @@ export default function Page() {
   return (
     <>
       <section className="w-full">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 py-6 md:px-16 md:py-12 lg:grid-cols-12 lg:px-6 lg:py-10">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 py-6 md:px-16 md:py-10 lg:grid-cols-12 lg:px-6 lg:py-14">
           <div className="flex flex-col items-start gap-5 text-left lg:col-span-7">
             <Badge
               variant="primary"
@@ -67,13 +69,13 @@ export default function Page() {
           </div>
 
           <div className="flex flex-col items-center justify-center lg:col-span-5">
-            <CardBorderedCorner className="w-full max-w-2xl [--card-spacing:--spacing(6)] lg:[--card-spacing:--spacing(8)]">
+            <CardBorderedCorner className="w-full max-w-full [--card-spacing:--spacing(6)] lg:[--card-spacing:--spacing(8)]">
               <CardContent>
                 <div className="flex w-full items-center justify-center bg-surface-container-low p-6">
                   <Image
                     src={logo}
                     alt="Food Safety Simplified Logo"
-                    className="h-auto max-h-72 w-full object-contain drop-shadow-sm"
+                    className="h-auto max-h-80 w-full object-contain drop-shadow-sm"
                     priority
                   />
                 </div>
@@ -123,6 +125,12 @@ export default function Page() {
           </div>
         </AlertDescription>
       </Alert>
+
+      <section className="w-full">
+        <div className="mx-auto max-w-7xl px-4 py-6 md:px-16 lg:px-6 lg:py-14">
+          <OutcomesGrid />
+        </div>
+      </section>
     </>
   )
 }
